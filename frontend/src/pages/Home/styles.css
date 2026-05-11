@@ -1,0 +1,23 @@
+.container {
+  padding: 32px;
+
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 24px;
+}
+
+.orders-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.right-side h2 {
+  margin-bottom: 12px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
