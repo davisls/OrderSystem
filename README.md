@@ -229,3 +229,5 @@ O sistema utiliza RabbitMQ para publicação de eventos de criação de pedidos.
 - CI/CD
 - Testes de integração
 - Health Checks
+- Implementar Variáveis de Ambinente (.env)
+- Encapsular projeto com Dockerfile para a API e para o WORKER
