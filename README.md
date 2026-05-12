@@ -87,7 +87,7 @@ Instalar:
 
 ---
 
-# Subindo tudo com Docker
+# Docker
 
 Na raiz do projeto:
 
@@ -142,6 +142,8 @@ dotnet run --project Worker
 ---
 
 # Rodar Front End
+
+Aplicação desenvolvida em React (Vite)
 
 ```bash
 cd frontend
