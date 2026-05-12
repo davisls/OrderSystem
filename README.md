@@ -121,37 +121,43 @@ dotnet ef database update --project Infrastructure --startup-project Api
 
 ---
 
-# Serviços
+# Rodar API
 
-| Serviço             | Porta |
-| ------------------- | ----- |
-| API                 | 5278  |
-| SQL Server          | 1433  |
-| MongoDB             | 27017 |
-| RabbitMQ            | 5672  |
-| RabbitMQ Management | 15672 |
+```bash
+dotnet run --project Api
+```
 
 ---
 
-# RabbitMQ Management
+# Rodar Worker (Consumer RabbitMQ)
 
-Acesse:
+O Worker é responsável por consumir mensagens do RabbitMQ e processar os pedidos de forma assíncrona.
 
-```text
-http://localhost:15672
+Para rodar o Worker:
+
+```bash
+dotnet run --project Worker
 ```
 
-Usuário:
+---
 
-```text
-guest
+# Rodar Front End
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
-Senha:
+# Serviços
 
-```text
-guest
-```
+| Serviço    | Porta |
+| ---------- | ----- |
+| API        | 5278  |
+| SQL Server | 1433  |
+| MongoDB    | 27017 |
+| RabbitMQ   | 5672  |
+| FrontEnd   | 5173  |
 
 ---
 
@@ -161,44 +167,6 @@ Acesse:
 
 ```text
 http://localhost:5278/swagger
-```
-
----
-
-# Executando sem Docker
-
-## 1. Subir dependências manualmente
-
-Você precisará:
-
-- SQL Server
-- MongoDB
-- RabbitMQ
-
----
-
-## 2. Configurar appsettings.json
-
-```json
-{
-  "ConnectionStrings": {
-    "SqlServer": "Server=localhost,1433;Database=OrdersDb;User Id=sa;Password=senha123;TrustServerCertificate=True"
-  },
-
-  "MongoSettings": {
-    "ConnectionString": "mongodb://localhost:27017",
-    "DatabaseName": "OrdersCacheDb",
-    "OrdersCollection": "orders"
-  }
-}
-```
-
----
-
-## 3. Rodar API
-
-```bash
-dotnet run --project Api
 ```
 
 ---
